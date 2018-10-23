@@ -29,3 +29,13 @@ class AddProduct(Resource):
         return res
 
 
+class GetProduct(Resource):
+    """this class deals with a single request"""
+
+    def get(self, product_id):
+        """this gets one product details"""
+        for product in products:
+            if product_id == product['product_id']:
+                return jsonify({'product': product})
+        return Responses.not_found("Product not found")
+
