@@ -1,0 +1,16 @@
+language : python
+python:
+    - "3.6"
+
+install:
+  - pip install -r requirements.txt
+
+env:
+  - FLASK_VERSION=1.0.2
+
+script: 
+  - pytest --cov-report term-missing --cov=app
+  # - nosetests --exe --with-coverage --cover-package=app
+
+after_script:
+  - coveralls
