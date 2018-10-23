@@ -13,7 +13,7 @@ Store Manager API is a flask RESTful API that helps store owners manage sales an
 
 1) Clone the repository by doing: `git clone https://github.com/mimipeshy/Stock-Manager-Api.git`
 
-2)Git checkout ch-integrate-with-travis-61405239
+2) Git checkout ch-integrate-with-travis-61405239
 
 3) Create a virtual environment: `virtualenv env`
 
