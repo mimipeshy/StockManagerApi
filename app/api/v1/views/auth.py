@@ -25,5 +25,14 @@ class RegisterUser(Resource):
         users.append(new_user)
         return Responses.created_response(new_user)
 
+class Login(Resource):
+    """this logins a user"""
+
+    def post(self):
+        data = request.get_json(force= True)
+        email = data['email']
+        password = data['password']
+        if email == email and password == check_password_hash(password, password):
+            return Responses.complete_response("LOGGED IN")
 
 
