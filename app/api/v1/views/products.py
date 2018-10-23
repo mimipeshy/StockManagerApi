@@ -7,6 +7,12 @@ from app.response import Responses
 
 class AddProduct(Resource):
 
+    @staticmethod
+    def get():
+        """this returns all products"""
+        res = Responses.complete_response(products)
+        return res
+
     def post(self):
         """this adds a new product"""
         data = request.get_json()
@@ -21,4 +27,5 @@ class AddProduct(Resource):
         res = Responses.created_response(products)
 
         return res
+
 
