@@ -29,12 +29,3 @@ class MakeSales(Resource):
         return Responses.not_found("Product not found")
 
 
-class GetSale(Resource):
-    """this class deals with a single request"""
-
-    def get(self, sale_id):
-        """this gets one product details"""
-        for sale in sales:
-            if sale_id == sale['sale_id']:
-                return jsonify({'sale': sale})
-        return Responses.not_found("Sale record not found")
