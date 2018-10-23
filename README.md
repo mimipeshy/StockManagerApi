@@ -1,4 +1,4 @@
-# Stock-Manager-Api         [![Build Status](https://travis-ci.org/mimipeshy/StockManagerApi.svg?branch=ch-integrate-travis-61405239)](https://travis-ci.org/mimipeshy/StockManagerApi)      [![Coverage Status](https://coveralls.io/repos/github/mimipeshy/StockManagerApi/badge.svg?branch=ch-integrate-travis-61405239)](https://coveralls.io/github/mimipeshy/StockManagerApi?branch=ch-integrate-travis-61405239)
+# Stock-Manager-Api         [![Build Status](https://travis-ci.org/mimipeshy/StockManagerApi.svg?branch=ch-integrate-travis-61405239)](https://travis-ci.org/mimipeshy/StockManagerApi)      [![Coverage Status](https://coveralls.io/repos/github/mimipeshy/StockManagerApi/badge.svg?branch=ch-integrate-travis-61405239)](https://coveralls.io/github/mimipeshy/StockManagerApi?branch=ch-integrate-travis-61405239)  
 
 Store Manager API is a flask RESTful API that helps store owners manage sales and product inventory records.The store owner or admin can:-
 
@@ -7,6 +7,8 @@ Store Manager API is a flask RESTful API that helps store owners manage sales an
 - Get all products 
 - Add sale records
 - Get one specific sale 
+- Register New User
+- Login User
 
 ## Getting Started
 
@@ -45,6 +47,8 @@ Use nosetest to run: `nosetests --exe --with-coverage --cover-package=app`
 | GET  /api/v1/products/product_id           | retrieve a single product by id    |
 | GET  /api/v1/sales                         | retrieve all sale records          |
 | GET  /api/v1/sales/sale_id                 | retrieves a single sale record     | 
+| POST  /api/v1/auth/register                | This will register a user          |
+| POST  /api/v1/auth/login                   | This will login a user             | 
 
 ## Heroku application
 https://store-manager-api-app-v1.herokuapp.com/
