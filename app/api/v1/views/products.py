@@ -7,12 +7,6 @@ from app.response import Responses
 
 class AddProduct(Resource):
 
-    @staticmethod
-    def get():
-        """this returns all products"""
-        res = Responses.complete_response(products)
-        return res
-
     def post(self):
         """this adds a new product"""
         data = request.get_json()
@@ -27,15 +21,4 @@ class AddProduct(Resource):
         res = Responses.created_response(products)
 
         return res
-
-
-class GetProduct(Resource):
-    """this class deals with a single request"""
-
-    def get(self, product_id):
-        """this gets one product details"""
-        for product in products:
-            if product_id == product['product_id']:
-                return jsonify({'product': product})
-        return Responses.not_found("Product not found")
 
