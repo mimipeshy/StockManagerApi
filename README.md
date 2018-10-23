@@ -1,5 +1,4 @@
-# Stock-Manager-Api         [![Build Status](https://travis-ci.org/mimipeshy/Stock-Manager-Api.svg?branch=master)](https://travis-ci.org/mimipeshy/Stock-Manager-Api)
-
+# Stock-Manager-Api         [![Build Status](https://travis-ci.org/mimipeshy/StockManagerApi.svg?branch=ch-integrate-travis-61405239)](https://travis-ci.org/mimipeshy/StockManagerApi)
 
 Store Manager API is a flask RESTful API that helps store owners manage sales and product inventory records.The store owner or admin can:-
 
