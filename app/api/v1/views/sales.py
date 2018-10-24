@@ -38,5 +38,3 @@ class GetSale(Resource):
             if sale_id == sale['sale_id']:
                 return jsonify({'sale': sale})
         return Responses.not_found("Sale record not found")
-
-        

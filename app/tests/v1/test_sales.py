@@ -1,7 +1,6 @@
 import json
 import unittest
 
-
 from app.tests.v1.base_test import BaseTests
 
 
@@ -10,10 +9,9 @@ class SaleTests(BaseTests):
 
     def test_create_sale(self):
         """Test API can create a sale"""
-        add_sale = json.dumps({
-            "product_id":"1"
-        })
-        response = self.client().post('/api/v1/sales', data=add_sale,
+        self.client().post('/api/v1/products', data=self.add_product,
+                                      content_type='application/json')
+        response = self.client().post('/api/v1/sales', data=self.add_sale,
                                       content_type='application/json')
         self.assertEqual(response.status_code, 201)
 
@@ -24,14 +22,39 @@ class SaleTests(BaseTests):
                                      content_type='application/json')
         self.assertEqual(response.status_code, 200)
 
-
-    def test_incorrect_sale_by_id(self):
+    def test_get_sale_by_id(self):
         """Tests API can get one product by using its id"""
-        sales = {"sale_id": 4}
-        response = self.client().get('/api/v1/sales/6', data=sales,
+        sales = {"sale_id": 1}
+        self.client().post('/api/v1/products', data=self.add_product,
+                           content_type='application/json')
+        self.client().post('/api/v1/sales', data=self.add_sale,
+                           content_type='application/json')
+        response = self.client().get('/api/v1/sales/1', data=sales,
                                      content_type='application/json',
                                      )
+        self.assertEqual(response.status_code, 200)
+
+    def test_get_incorrect_sale_id(self):
+
+        """test invalid sale id"""
+        sales = json.dumps({
+            "sale_id": "1"
+        })
+
+        self.client().post('/api/v1/products', data=self.add_product,
+                           content_type='application/json')
+        self.client().post('/api/v1/sales', data=self.add_sale,
+                           content_type='application/json')
+        response= self.client().get ('/api/v1/sales/5', data= sales,
+                                     content_type= 'application/json')
         self.assertEqual(response.status_code, 404)
+
+    def test_empty_product(self):
+        """Test API can create a sale"""
+        sales= {}
+        response = self.client().post('/api/v1/sales', data=self.add_sale,
+                                      content_type='application/json')
+        self.assertEqual(response.status_code, 201)
 
 
 if __name__ == '__main__':

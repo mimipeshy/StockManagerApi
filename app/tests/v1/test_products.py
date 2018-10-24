@@ -22,20 +22,11 @@ class ProductTests(BaseTests):
 
     def test_get_product_by_id(self):
         """Tests API can get one product by using its id"""
-        products = {"product_id": 1}
-        response = self.client().get('/api/v1/products/1', data=products,
+        # products = {"product_hid": "45678"}
+        response = self.client().get('/api/v1/products/1',
                                       content_type='application/json',
                                       )
         self.assertEqual(response.status_code, 200)
-
-    def test_incorrect_id(self):
-        products = {"product_id": 1}
-        response = self.client().get('/api/v1/products/6', data=products,
-                                     content_type='application/json',
-                                     )
-        self.assertEqual(response.status_code, 404)
-
-
 
 
 if __name__ == '__main__':
