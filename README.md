@@ -1,4 +1,4 @@
-# Stock-Manager-Api         [![Build Status](https://travis-ci.org/mimipeshy/StockManagerApi.svg?branch=ch-update-read-me-161441445)](https://travis-ci.org/mimipeshy/StockManagerApi))[![Coverage Status](https://coveralls.io/repos/github/mimipeshy/StockManagerApi/badge.svg)](https://coveralls.io/github/mimipeshy/StockManagerApi)    [![Maintainability](https://api.codeclimate.com/v1/badges/ff378540dda612818a04/maintainability)](https://codeclimate.com/github/mimipeshy/StockManagerApi/maintainability) 
+# Stock-Manager-Api         [![Build Status](https://travis-ci.org/mimipeshy/StockManagerApi.svg?branch=ch-update-read-me-161441445)](https://travis-ci.org/mimipeshy/StockManagerApi))  [![Coverage Status](https://coveralls.io/repos/github/mimipeshy/StockManagerApi/badge.svg)](https://coveralls.io/github/mimipeshy/StockManagerApi))    [![Maintainability](https://api.codeclimate.com/v1/badges/ff378540dda612818a04/maintainability)](https://codeclimate.com/github/mimipeshy/StockManagerApi/maintainability) 
  
 Store Manager API is a flask RESTful API that helps store owners manage sales and product inventory records.The store owner or admin can:-
 
