@@ -49,7 +49,7 @@ Use nosetest to run: `nosetests --exe --with-coverage --cover-package=app`
 | GET  /api/v1/sales/sale_id                 | retrieves a single sale record     |  
 
 ## Heroku application
-https://store-manager-api-app-v1.herokuapp.com/
+ https://stockmanger.herokuapp.com/api/v1/products
 
 ## Built With
 * [Flask-RESTful](https://flask-restful.readthedocs.io/en/latest/) -  The web framework used
