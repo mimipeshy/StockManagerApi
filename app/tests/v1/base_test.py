@@ -5,7 +5,7 @@ import json
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from app.app import create_app
-from app.api.v1.models.sales import Sale
+
 
 class BaseTests(unittest.TestCase):
     """This class represents the base configurations for all tests"""
