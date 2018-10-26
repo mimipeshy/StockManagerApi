@@ -31,7 +31,7 @@ class Responses:
     def blank_input (message):
         """input your personal message here"""
         response= make_response(jsonify({
-            "Status":"Not found",
+            "Status":"Empty field/s",
             "Message":message
         }), 404)
         return response
@@ -42,5 +42,12 @@ class Responses:
             "Status": "Bad Request",
             "Message": message
         }), 404)
+        return response
+    @staticmethod
+    def error_message (message):
+        response= make_response(jsonify({
+            'Status': 'Error',
+            'Message': message
+        }), 400)
         return response
 
