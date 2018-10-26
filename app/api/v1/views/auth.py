@@ -36,3 +36,18 @@ class Signup(Resource):
         return Responses.created_response(user)
 
 
+class Login(Resource):
+
+    def post(self):
+        """this logs in a registered user"""
+        data = request.get_json(force=True)
+        password = data['password']
+        email = data['email']
+
+        user = [user for user in users if user["email"] == email and user["password"] == password]
+        if not user:
+            return Responses.not_found('User does not exist. Kindly register!')
+
+        if data['password'] == password:
+            token = create_access_token(identity=email)
+            return make_response(jsonify({'message': 'Logged in successfully!', 'token': token}), 200)
